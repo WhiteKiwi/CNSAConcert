@@ -55,7 +55,7 @@ namespace CNSAConcert.Managers {
 			bool result = false;
 
 			// Connect to DB
-			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SDGDB"].ConnectionString)) {
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
 				conn.Open();
 
 				// Command Text - Select Password
