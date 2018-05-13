@@ -3,11 +3,8 @@
 	/// users table Model
 	/// </summary>
 	public class User {
-		// User's Serial Number
-		public int Id { get; set; }
-
 		// User's ID
-		public int StudentNumber { get; set; }
+		public string  StudentNumber { get; set; }
 
 		// User's Password
 		private string password;
@@ -23,5 +20,8 @@
 
 		// User's Name
 		public string Name { get; set; }
+
+		// User's Grade
+		public string Grade { get; set; }
 	}
 }

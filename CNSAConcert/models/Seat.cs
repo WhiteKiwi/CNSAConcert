@@ -4,12 +4,12 @@
 	/// </summary>
 	public class Seat {
 		// 행 (가로)
-		public int Row { get; set; }
+		public string Row { get; set; }
 
 		// 열 (세로줄)
-		public int Column { get; set; }
+		public string Col { get; set; }
 
 		// Student Number
-		public int StudentNumber { get; set; }
+		public string StudentNumber { get; set; }
 	}
 }
