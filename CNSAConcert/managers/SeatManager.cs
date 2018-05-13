@@ -92,5 +92,38 @@ namespace CNSAConcert.Managers {
 			return result;
 		}
 
+		/// <summary>
+		/// DB에서 학번으로 좌석을 검색하는 메서드
+		/// </summary>
+		/// <param name="studentNumber">Member variables in <c>Seat</c> class</param>
+		/// <see cref="Seat.StudentNumber"/>
+		public static Seat SearchSeat(int studentNumber) {
+			// Return -1 if search fails
+			var result = new Seat {
+				Row = -1,
+				Column = -1,
+				StudentNumber = studentNumber
+			};
+
+			// Connect to DB
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
+				conn.Open();
+
+				// Command Text - Select Seat
+				string commandText = string.Format("SELECT * FROM {0} WHERE Student_Number='{1}';", SEATTABLE, studentNumber);
+				var cmd = new MySqlCommand(commandText, conn);
+
+				// The number of rows affected
+				var rdr = cmd.ExecuteReader();
+				rdr.Read();
+				result.Row = (int)rdr["Row"];
+				result.Column = (int)rdr["Column"];
+
+				// Connection Close
+				conn.Close();
+			}
+
+			return result;
+		}
 	}
 }

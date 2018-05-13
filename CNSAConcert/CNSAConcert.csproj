@@ -92,8 +92,9 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="managers\SeatManager.cs" />
     <Compile Include="managers\UserManager.cs" />
-    <Compile Include="models\Ticket.cs" />
+    <Compile Include="models\Seat.cs" />
     <Compile Include="models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
