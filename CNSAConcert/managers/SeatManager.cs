@@ -115,8 +115,8 @@ namespace CNSAConcert.Managers {
 
 				// Load 성공 시 실행
 				if (rdr.Read()) {
-					result.Row = (string)rdr["Row"];
-					result.Col = (string)rdr["Col"];
+					result.Row = ((int)rdr["Row"]).ToString();
+					result.Col = ((int)rdr["Col"]).ToString();
 				}
 
 				// Connection Close
