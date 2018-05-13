@@ -25,7 +25,7 @@ namespace CNSAConcert.Managers {
 				var cmd = new MySqlCommand(commandText, conn);
 
 				// If the passwords match -> Update Password
-				if (user.Password == (string)cmd.ExecuteScalar()) {
+				if (user.Password == ((int)cmd.ExecuteScalar()).ToString()) {
 					// Change user's password
 					user.Password = newPassword;
 
@@ -72,6 +72,5 @@ namespace CNSAConcert.Managers {
 
 			return result;
 		}
-
 	}
 }
