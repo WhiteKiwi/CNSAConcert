@@ -42,5 +42,36 @@ namespace CNSAConcert.Managers {
 
 			return result;
 		}
+			
+		/// <summary>
+		/// Check the <c>User</c>'s Id and pw
+		/// </summary>
+		/// <param name="studentNumber">User's Student Number</param>  
+		/// <param name="password">User's Password</param>  
+		/// <see cref="User.StudentNumber"/>
+		/// <see cref="User.Password"/>
+		public static bool LoginCheck(int studentNumber, string inputPassword) {
+			// Returns false if the ID and password do not match
+			bool result = false;
+
+			// Connect to DB
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["SDGDB"].ConnectionString)) {
+				conn.Open();
+
+				// Command Text - Select Password
+				string commandText = string.Format("SELECT Password FROM {0} WHERE Student_Number='{1}';", USERTABLE, studentNumber);
+				var cmd = new MySqlCommand(commandText, conn);
+
+				// Check User's Password
+				if ((int)cmd.ExecuteScalar() == (inputPassword + "sGSf4YnR6I6I8Kj,GaCVwGSDfhRQ24i56lU6I3qI445EyoFN35J4Q38oy7").GetHashCode())
+					result = true;
+				
+				// Connection Close
+				conn.Close();
+			}
+
+			return result;
+		}
+
 	}
 }
