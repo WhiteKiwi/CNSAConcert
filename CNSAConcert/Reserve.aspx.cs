@@ -11,11 +11,15 @@ namespace CNSAConcert {
 		}
 
 		protected void ReserveButton_Click(object sender, EventArgs e) {
-			SeatManager.Reserve(new Seat {
+			if (SeatManager.Reserve(new Seat {
 				Row = Row.Text,
-                Col = Column.Text,
+				Col = Column.Text,
 				StudentNumber = (string)Session["StudentNumber"]
-			}, (string)Session["Grade"]);
+			}, (string)Session["Grade"]) == -1) {
+					Response.Write("<script>alert('예매에 실패하였습니다.');</script>");
+			} else {
+				Response.Redirect("/");
+			}
 		}
 	}
 }
