@@ -11,7 +11,7 @@ namespace CNSAConcert.Managers {
 		/// </summary>
 		/// <param name="seat">Seat class in Models</param>  
 		/// <see cref="Seat"/>
-		public static int Reserve(Seat seat) {
+		public static int Reserve(Seat seat, int grade) {
 			// If the reservation fails, -1 is returned
 			int result = -1;
 
@@ -20,7 +20,7 @@ namespace CNSAConcert.Managers {
 				conn.Open();
 
 				// Command Text - Update Student Number
-				string commandText = string.Format("UPDATE {0} SET Student_Number='{1}' WHERE Row='{2}', Column='{3}';", SEATTABLE, seat.StudentNumber, seat.Row, seat.Column);
+				string commandText = string.Format("UPDATE {0} SET Student_Number='{1}' WHERE Row='{2}', Column='{3}';", SEATTABLE + grade, seat.StudentNumber, seat.Row, seat.Column);
 				var cmd = new MySqlCommand(commandText, conn);
 
 				// The number of rows affected
@@ -38,7 +38,7 @@ namespace CNSAConcert.Managers {
 		/// </summary>
 		/// <param name="studentNumber">Seat class in Models</param>  
 		/// <see cref="Seat.StudentNumber"/>
-		public static int CancelReservation(int studentNumber) {
+		public static int CancelReservation(int studentNumber, int grade) {
 			// If cancel fails, -1 is returned
 			int result = -1;
 			
@@ -47,11 +47,8 @@ namespace CNSAConcert.Managers {
 				conn.Open();
 
 				// Command Text - Delete Student Number
-				string commandText = string.Format("UPDATE {0} SET Student_Number='-1' WHERE Student_Number='{1}';", SEATTABLE, studentNumber);
+				string commandText = string.Format("UPDATE {0} SET Student_Number='-1' WHERE Student_Number='{1}';", SEATTABLE + grade, studentNumber);
 				var cmd = new MySqlCommand(commandText, conn);
-
-				// UPDATE [테이블] SET [열]= '변경할값' WHERE Student_Number='+studentNumber+'
-				// -1 대입
 
 				// The number of rows affected
 				result = cmd.ExecuteNonQuery();
@@ -70,7 +67,7 @@ namespace CNSAConcert.Managers {
 		/// <param name="column">Member variables in <c>Seat</c> class</param>  
 		/// <see cref="Seat.Row"/>
 		/// <see cref="Seat.Column"/>
-		public static int AddSeat(int row, int column) {
+		public static int AddSeat(int row, int column, int grade) {
 			// Return -1 if seat addition fails
 			int result = -1;
 
@@ -79,7 +76,7 @@ namespace CNSAConcert.Managers {
 				conn.Open();
 
 				// Command Text - Select Password
-				string commandText = string.Format("INSERT INTO {0}(Row, Column) VALUES ('{1}', '{2}');", SEATTABLE, row, column);
+				string commandText = string.Format("INSERT INTO {0}(Row, Column) VALUES ('{1}', '{2}');", SEATTABLE + grade, row, column);
 				var cmd = new MySqlCommand(commandText, conn);
 
 				// The number of rows affected
@@ -97,7 +94,7 @@ namespace CNSAConcert.Managers {
 		/// </summary>
 		/// <param name="studentNumber">Member variables in <c>Seat</c> class</param>
 		/// <see cref="Seat.StudentNumber"/>
-		public static Seat SearchSeat(int studentNumber) {
+		public static Seat SearchSeat(int studentNumber, int grade) {
 			// Return -1 if search fails
 			var result = new Seat {
 				Row = -1,
@@ -110,7 +107,7 @@ namespace CNSAConcert.Managers {
 				conn.Open();
 
 				// Command Text - Select Seat
-				string commandText = string.Format("SELECT * FROM {0} WHERE Student_Number='{1}';", SEATTABLE, studentNumber);
+				string commandText = string.Format("SELECT * FROM {0} WHERE Student_Number='{1}';", SEATTABLE + grade, studentNumber);
 				var cmd = new MySqlCommand(commandText, conn);
 
 				// The number of rows affected
