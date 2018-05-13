@@ -9,11 +9,11 @@ namespace CNSAConcert {
 
 		protected void SignInButton_Click(object sender, EventArgs e) {
 			if (UserManager.LoginCheck(StudentNumber.Text, Password.Text)) {
-                // Save student number and grade in session if user success to log in
+				// Save student number and grade in session if user success to log in
 				Session["StudentNumber"] = StudentNumber.Text;
-				Session["Grade"] = StudentNumber.Text.ToCharArray()[1].ToString();
+				Session["Grade"] = StudentNumber.Text.ToCharArray()[1] == '7' ? "2" : "1";
 
-                // Redirect to main page
+				// Redirect to main page
 				Response.Redirect("/");
 			} else {
 				// 실패 시 alert 띄우기
