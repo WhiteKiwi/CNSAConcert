@@ -1,8 +1,8 @@
 ﻿namespace CNSAConcert.Models {
 	/// <summary>
-	/// tickets table Model
+	/// seats table Model
 	/// </summary>
-	public class Ticket {
+	public class Seat {
 		// 행 (가로)
 		public int Row { get; set; }
 
@@ -10,6 +10,6 @@
 		public int Column { get; set; }
 
 		// Student Number
-		private int StudentNumber { get; set; };
+		public int StudentNumber { get; set; }
 	}
 }
