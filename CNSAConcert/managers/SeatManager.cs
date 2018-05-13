@@ -63,5 +63,34 @@ namespace CNSAConcert.Managers {
 			return result;
 		}
 
+		/// <summary>
+		/// DB에 좌석을 추가하는 메서드
+		/// </summary>
+		/// <param name="row">Member variables in <c>Seat</c> class</param>  
+		/// <param name="column">Member variables in <c>Seat</c> class</param>  
+		/// <see cref="Seat.Row"/>
+		/// <see cref="Seat.Column"/>
+		public static int AddSeat(int row, int column) {
+			// Return -1 if seat addition fails
+			int result = -1;
+
+			// Connect to DB
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
+				conn.Open();
+
+				// Command Text - Select Password
+				string commandText = string.Format("INSERT INTO {0}(Row, Column) VALUES ('{1}', '{2}');", SEATTABLE, row, column);
+				var cmd = new MySqlCommand(commandText, conn);
+
+				// The number of rows affected
+				result = cmd.ExecuteNonQuery();
+
+				// Connection Close
+				conn.Close();
+			}
+
+			return result;
+		}
+
 	}
 }
