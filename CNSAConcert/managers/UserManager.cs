@@ -50,7 +50,7 @@ namespace CNSAConcert.Managers {
 		/// <param name="password">User's Password</param>  
 		/// <see cref="User.StudentNumber"/>
 		/// <see cref="User.Password"/>
-		public static bool LoginCheck(int studentNumber, string inputPassword) {
+		public static bool LoginCheck(string studentNumber, string inputPassword) {
 			// Returns false if the ID and password do not match
 			bool result = false;
 
