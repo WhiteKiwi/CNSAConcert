@@ -19,12 +19,30 @@ namespace CNSAConcert.Managers {
 			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
 				conn.Open();
 
-				// Command Text - Update Student Number
-				string commandText = string.Format("UPDATE {0} SET Student_Number='{1}' WHERE Row='{2}' AND Col='{3}';", SEATTABLE + grade, seat.StudentNumber, seat.Row, seat.Col);
+				// Command Text - Check Is left Seat
+				string commandText = string.Format("SELECT Student_Number FROM {0} WHERE Row='{1}' AND Col='{2}';", SEATTABLE + grade, seat.Row, seat.Col);
 				var cmd = new MySqlCommand(commandText, conn);
 
-				// The number of rows affected
-				result = cmd.ExecuteNonQuery();
+				var rdr = cmd.ExecuteReader();
+				rdr.Read();
+				if (rdr.IsDBNull(0)) {
+					rdr.Close();
+					
+					// Command Text - Update Student Number
+					cmd.CommandText = string.Format("UPDATE {0} SET Student_Number='{1}' WHERE Row='{2}' AND Col='{3}';", SEATTABLE + grade, seat.StudentNumber, seat.Row, seat.Col);
+
+					try {
+						// The number of rows affected
+						result = cmd.ExecuteNonQuery();
+					} catch (MySqlException e) {
+						result = -3;
+					}
+				} else {
+					rdr.Close();
+
+					// 이미 선택된 좌석일 경우 -2 반환
+					result = -2;
+				}
 
 				// Connection Close
 				conn.Close();
@@ -41,7 +59,6 @@ namespace CNSAConcert.Managers {
 		public static int CancelReservation(string studentNumber, string grade) {
 			// If cancel fails, -1 is returned
 			int result = -1;
-			
 
 			// Connect to DB
 			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
