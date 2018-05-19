@@ -125,5 +125,37 @@ namespace CNSAConcert.Managers {
 
 			return result;
 		}
+
+		/// <summary>
+		/// 매진된 자리들을 가져오는 메서드
+		/// </summary>
+		/// <param name="grade">학년</param>
+		/// <see cref="Seat.Row"/>
+		/// <see cref="Seat.Col"/>
+		public static bool[,] GetLeftSeats(string grade) {
+			var result = new bool[20, 20];
+
+			// Connect to DB
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
+				conn.Open();
+
+				// Command Text - Select Seat
+				string commandText = string.Format("SELECT * FROM {0} WHERE Student_Number is not NULL;", SEATTABLE + grade);
+				var cmd = new MySqlCommand(commandText, conn);
+
+				// Reader 가져오기
+				var rdr = cmd.ExecuteReader();
+
+				// Load 성공 시 실행
+				while (rdr.Read()) {
+					result[(int)rdr["Row"], (int)rdr["Col"]] = true;
+				}
+
+				// Connection Close
+				conn.Close();
+			}
+
+			return result;
+		}
 	}
 }
