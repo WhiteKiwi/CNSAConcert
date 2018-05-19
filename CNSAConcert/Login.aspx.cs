@@ -17,7 +17,7 @@ namespace CNSAConcert {
 				Response.Redirect("/");
 			} else {
 				// 실패 시 alert 띄우기
-				Response.Write("<script>alert('ID와 PW를 다시 한번 확인해 주세요.');</script>");
+				Response.Write("<script>alert('ID와 PW를 다시 한번 확인해 주세요'); window.location.replace('/Login.aspx');</script>");
 			}
 		}
 	}

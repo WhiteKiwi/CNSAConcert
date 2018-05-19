@@ -18,13 +18,13 @@ namespace CNSAConcert {
 					StudentNumber = (string)Session["StudentNumber"],
 					Password = OldPassword.Text
 				}, NewPassword.Text) == -1) {
-					Response.Write("<script>alert('Please confirm the original password');</script>");
+					Response.Write("<script>alert('Please confirm the original password'); window.location.replace('/Account.aspx');</script>");
 				} else {
-					Response.Write("<script>alert('Success to change password');</script>");
+					Response.Write("<script>alert('Success to change password'); window.location.replace('/Account.aspx');</script>");
 				}
 			} else {
 				// Notify If passwords do not match
-				Response.Write("<script>alert('Passwords do not match');</script>");
+				Response.Write("<script>alert('Passwords do not match'); window.location.replace('/Account.aspx');</script>");
 			}
 		}
 	}
