@@ -11,5 +11,11 @@
 
 		// Student Number
 		public string StudentNumber { get; set; }
+
+        public Seat(string row = "-1", string col = "-1", string studentNumber = null) {
+			Row = row;
+			Col = col;
+			StudentNumber = studentNumber;
+		}
 	}
 }
