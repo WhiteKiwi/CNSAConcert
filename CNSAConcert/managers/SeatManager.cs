@@ -42,6 +42,7 @@ namespace CNSAConcert.Managers {
 			// If cancel fails, -1 is returned
 			int result = -1;
 			
+
 			// Connect to DB
 			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
 				conn.Open();
@@ -96,11 +97,7 @@ namespace CNSAConcert.Managers {
 		/// <see cref="Seat.StudentNumber"/>
 		public static Seat LoadReservation(string studentNumber, string grade) {
 			// Return -1 if search fails
-			var result = new Seat {
-				Row = "-1",
-				Col = "-1",
-				StudentNumber = studentNumber
-			};
+			var result = new Seat(studentNumber);
 
 			// Connect to DB
 			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
@@ -110,7 +107,7 @@ namespace CNSAConcert.Managers {
 				string commandText = string.Format("SELECT * FROM {0} WHERE Student_Number='{1}';", SEATTABLE + grade, studentNumber);
 				var cmd = new MySqlCommand(commandText, conn);
 
-				// The number of rows affected
+				// Reader 가져오기
 				var rdr = cmd.ExecuteReader();
 
 				// Load 성공 시 실행
