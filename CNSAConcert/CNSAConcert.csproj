@@ -80,11 +80,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Account.aspx" />
+    <Content Include="admin\GetReservation.aspx" />
+    <Content Include="admin\Login.aspx" />
+    <Content Include="admin\SeatManagement.aspx" />
     <Content Include="assets\css\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="Reserve.aspx" />
+    <Content Include="ReserveCheck.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -96,6 +100,27 @@
     </Compile>
     <Compile Include="Account.aspx.designer.cs">
       <DependentUpon>Account.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\GetReservation.aspx.cs">
+      <DependentUpon>GetReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\GetReservation.aspx.designer.cs">
+      <DependentUpon>GetReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\SeatManagement.aspx.cs">
+      <DependentUpon>SeatManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\SeatManagement.aspx.designer.cs">
+      <DependentUpon>SeatManagement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -129,6 +154,13 @@
     </Compile>
     <Compile Include="Reserve.aspx.designer.cs">
       <DependentUpon>Reserve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReserveCheck.aspx.cs">
+      <DependentUpon>ReserveCheck.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReserveCheck.aspx.designer.cs">
+      <DependentUpon>ReserveCheck.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
