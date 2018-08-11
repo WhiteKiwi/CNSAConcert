@@ -32,5 +32,20 @@ namespace CNSAConcert.admin {
 				conn.Close();
 			}
 		}
+		protected void InitButton_Click(object sender, EventArgs e) {
+			// Connect to DB
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
+				conn.Open();
+
+				// Command Text - Delete Student Number
+				var cmd = new MySqlCommand($"TRUNCATE TABLE seats{Grade.Text};", conn);
+
+				// The number of rows affected
+				cmd.ExecuteNonQuery();
+
+				// Connection Close
+				conn.Close();
+			}
+		}
 	}
 }

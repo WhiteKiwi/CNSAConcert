@@ -16,6 +16,8 @@
 		<h1>Col</h1>
 		<asp:TextBox runat="server" ID="Col"></asp:TextBox>
 		<asp:Button runat="server" ID="AddButton" OnClick="AddButton_Click" Text="추가" />
+		<br/>
+		<asp:Button runat="server" ID="InitButton" OnClick="InitButton_Click" Text="초기화" />
     </form>
 </body>
 </html>
