@@ -28,17 +28,25 @@
 	%>
 	<br />
 
-	<form method="post">
+	<form method="post" runat="server">
 		<input id="row" name="row" type="hidden" value="" />
 		<input id="col" name="col" type="hidden" value="" />
 		<button type="submit">예매</button>
+		<div id="seat" name="seat" style="display: none;">
+			<asp:Label runat="server" ID="Grade" name="grade"></asp:Label><span id="reservation" name="reservation"></span>
+		</div>
 	</form>
+
 	<script>
 		function selectSeat(row, col) {
 			document.getElementById("row").value = row;
 			document.getElementById("col").value = col;
+			// grade display: none;
+            document.getElementById("seat").style.display = "block";
+            document.getElementById("reservation").innerText = String.fromCharCode(64 + row) + "-" + col;
+
+			// "#reservation".Text row + "-" + col
 		}
 	</script>
 </body>
 </html>
-<!DOCTYPE html>

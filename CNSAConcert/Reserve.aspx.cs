@@ -9,6 +9,8 @@ namespace CNSAConcert {
 			if (String.IsNullOrEmpty((string)Session["StudentNumber"]) || String.IsNullOrEmpty((string)Session["Grade"]))
 				Response.Redirect("/Login.aspx");
 
+			Grade.Text = (string)Session["Grade"] == "1" ? "CN-" : "SA-";
+
 			if (!String.IsNullOrEmpty(Request.Form["row"]) && !String.IsNullOrEmpty(Request.Form["col"])) {
 				int result = SeatManager.Reserve(new Seat {
 					Row = Request["row"],
