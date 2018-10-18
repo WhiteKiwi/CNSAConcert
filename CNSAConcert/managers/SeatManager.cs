@@ -1,5 +1,6 @@
 ﻿using CNSAConcert.Models;
 using MySql.Data.MySqlClient;
+using System;
 
 namespace CNSAConcert.Managers {
 	public class SeatManager {
@@ -146,7 +147,7 @@ namespace CNSAConcert.Managers {
 		/// <param name="grade">학년</param>
 		/// <see cref="Seat.Row"/>
 		/// <see cref="Seat.Col"/>
-		public static bool[,] GetLeftSeats(string grade) {
+		public static bool[,] GetSoldOutSeats(string grade) {
 			var result = new bool[20, 20];
 
 			// Connect to DB
@@ -164,6 +165,56 @@ namespace CNSAConcert.Managers {
 				while (rdr.Read()) {
 					result[(int)rdr["Row"], (int)rdr["Col"]] = true;
 				}
+
+				// Connection Close
+				conn.Close();
+			}
+
+			return result;
+		}
+
+		/// <summary>
+		/// 잔여석의 수를 가져오는 메서드
+		/// </summary>
+		/// <param name="grade">학년</param>
+		/// <returns></returns>
+		public static int GetLeftSeatsCount(string grade) {
+			var result = -1;
+
+			// Connect to DB
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
+				conn.Open();
+
+				// Command Text - Select Seat
+				string commandText = string.Format("SELECT count(*) FROM {0} WHERE Student_Number IS NULL;", SEATTABLE + grade);
+				var cmd = new MySqlCommand(commandText, conn);
+				
+				result = Convert.ToInt32(cmd.ExecuteScalar());
+
+				// Connection Close
+				conn.Close();
+			}
+
+			return result;
+		}
+
+		/// <summary>
+		/// 청원을 개수를 반환하는 메서드
+		/// </summary>
+		/// <param name="state">청원 상태</param>  
+		/// <see cref="Petition"/>
+		public static int GetPetitionsCount(int state) {
+			int result = 0;
+
+			// Connect to DB
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["COUNCILDB"].ConnectionString)) {
+				conn.Open();
+
+				// Command Text - Get Count
+				string sql = "SELECT count(*) FROM " + PETITIONS + " WHERE State='" + state + "';";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+				result = Convert.ToInt32(cmd.ExecuteScalar());
+
 
 				// Connection Close
 				conn.Close();
