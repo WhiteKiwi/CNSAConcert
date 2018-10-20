@@ -197,30 +197,5 @@ namespace CNSAConcert.Managers {
 
 			return result;
 		}
-
-		/// <summary>
-		/// 청원을 개수를 반환하는 메서드
-		/// </summary>
-		/// <param name="state">청원 상태</param>  
-		/// <see cref="Petition"/>
-		public static int GetPetitionsCount(int state) {
-			int result = 0;
-
-			// Connect to DB
-			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["COUNCILDB"].ConnectionString)) {
-				conn.Open();
-
-				// Command Text - Get Count
-				string sql = "SELECT count(*) FROM " + PETITIONS + " WHERE State='" + state + "';";
-				MySqlCommand cmd = new MySqlCommand(sql, conn);
-				result = Convert.ToInt32(cmd.ExecuteScalar());
-
-
-				// Connection Close
-				conn.Close();
-			}
-
-			return result;
-		}
 	}
 }
