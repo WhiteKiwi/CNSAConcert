@@ -82,7 +82,10 @@
     <Content Include="Account.aspx" />
     <Content Include="admin\Login.aspx" />
     <Content Include="admin\SeatManagement.aspx" />
+    <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\main_background.jpg" />
+    <Content Include="assets\images\cncon_homeImage.png" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -165,7 +168,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\images\" />
     <Folder Include="assets\js\" />
   </ItemGroup>
   <PropertyGroup>
