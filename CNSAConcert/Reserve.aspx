@@ -24,7 +24,7 @@
                 Response.Write("<span class=\"badge badge-primary\" style=\"font-size: 20px; background-color: gainsboro; color: black; width: 80px; margin-right: 10px; \">" + (char)(64 + i) + "</span>");
 
                 for (int j = 1; j <= 19; j++) {
-                    if (soldOutSeats[i - 1, j - 1])
+                    if (!soldOutSeats[i - 1, j - 1])
                         Response.Write("<span style=\"margin-right: 5px; \"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
                     else
                         Response.Write("<span style=\"margin-right: 5px; \"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary sold-out\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
