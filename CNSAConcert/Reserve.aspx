@@ -10,13 +10,12 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css?ver=0.1">
 </head>
 <body>
-
 	<!-- 본문에 대한 코드 -->
 	<div class=" col-9 container" style="text-align: left; float: left; padding: 2rem; position: relative;">
 		<!-- 제목 -->
 		<br>
 		<h1 style="width: 50%; color: white; background-color: #707070; margin-left: 350px; padding: 10px 0px 10px 0px; text-align: center"><strong>Stage</strong></h1>
-		<h1 style="text-align: center; margin-bottom: 45px;"><strong>CN</strong></h1>
+		<h1 style="text-align: center; margin-bottom: 45px;"><strong><asp:Label runat="server" ID="AREA"></asp:Label></strong></h1>
 		<%
             bool[,] soldOutSeats = CNSAConcert.Managers.SeatManager.GetSoldOutSeats((string)Session["Grade"]);
             for (int i = 3; i <= 21; i++) {
@@ -90,14 +89,13 @@
 									<p style="margin-left: 7px">선택좌석</p>
 
 									<div style="width: 26.35px; height: 26.35px; background-color: #5BC0DE; margin-left: 7px; margin-bottom: 35px; float: left;"></div>
-									<div style="margin-bottom: 20px; float: left">
-										<asp:Label runat="server" ID="Grade" name="grade"></asp:Label><span id="reservation" name="reservation"></span>
+									<div id="seat" style="margin-bottom: 20px; float: left; display: none;">
+										&nbsp;<asp:Label runat="server" ID="Grade" name="grade"></asp:Label><span id="reservation" name="reservation"></span>
 									</div>
 								</td>
 							</tr>
 						</table>
 					</div>
-
 
 
 					<form method="post" runat="server">
@@ -117,7 +115,7 @@
 			document.getElementById("col").value = col;
 			// grade display: none;
 			document.getElementById("seat").style.display = "block";
-			document.getElementById("reservation").innerText = String.fromCharCode(64 + row) + "-" + col;
+			document.getElementById("reservation").innerText = String.fromCharCode(64 + row) + "열-" + (col < 10 ? "0" + col : col) + "번";
 
 			// "#reservation".Text row + "-" + col
 		}
