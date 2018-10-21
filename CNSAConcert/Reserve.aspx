@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
 <head runat="server">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CNSA CONCERT</title>
@@ -19,18 +18,21 @@
 		<h1 style="width: 50%; color: white; background-color: #707070; margin-left: 350px; padding: 10px 0px 10px 0px; text-align: center"><strong>Stage</strong></h1>
 		<h1 style="text-align: center; margin-bottom: 45px;"><strong>CN</strong></h1>
 		<%
-			
-			for (int i = 1; i <= 19; i++) {
-				Response.Write("<div style=\"margin-left: 130px; margin-top: 5px;\">");
+            bool[,] soldOutSeats = CNSAConcert.Managers.SeatManager.GetSoldOutSeats((string)Session["Grade"]);
+            for (int i = 3; i <= 21; i++) {
+                Response.Write("<div style=\"margin-left: 130px; margin-top: 5px;\">");
 
-				Response.Write("\t<span class=\"badge badge-primary\" style=\"font-size: 20px; background-color: gainsboro; color: black; width: 80px; margin-right: 10px; \">" + (char)(64 + i) + "</span>");
+                Response.Write("<span class=\"badge badge-primary\" style=\"font-size: 20px; background-color: gainsboro; color: black; width: 80px; margin-right: 10px; \">" + (char)(64 + i) + "</span>");
 
-				for (int j = 3; j <= 21; j++) {
-					Response.Write("\t<span style=\"margin-right: 5px; \"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
-				}
+                for (int j = 1; j <= 19; j++) {
+                    if (soldOutSeats[i - 1, j - 1])
+                        Response.Write("<span style=\"margin-right: 5px; \"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
+                    else
+                        Response.Write("<span style=\"margin-right: 5px; \"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary sold-out\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
+                }
 
-				Response.Write("</div>\n");
-			}
+                Response.Write("</div>\n");
+            }
 		%>
 	</div>
 
