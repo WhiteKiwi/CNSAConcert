@@ -19,18 +19,18 @@
 		<%
             bool[,] soldOutSeats = CNSAConcert.Managers.SeatManager.GetSoldOutSeats((string)Session["Grade"]);
             for (int i = 3; i <= 21; i++) {
-                Response.Write("<div style=\"margin-left: 130px; margin-top: 5px;\">");
+                Response.Write("<div style=\"margin-left: 210px; margin-top: 5px;\">");
 
-                Response.Write("<span class=\"badge badge-primary\" style=\"font-size: 20px; background-color: gainsboro; color: black; width: 80px; margin-right: 10px; \">" + (char)(64 + i) + "</span>");
+                Response.Write("<span class=\"badge badge-primary\" style=\"font-size: 20px; background-color: gainsboro; color: black; width: 80px; margin-right: 10px; float: left;\">" + (char)(64 + i) + "</span><div style=\"float: left; padding-top: 2.5px;\">");
 
                 for (int j = 1; j <= 19; j++) {
                     if (!soldOutSeats[i - 1, j - 1])
-                        Response.Write("<span style=\"margin-right: 5px; \"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
+                        Response.Write("<span style=\"margin-right: 5px;\"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
                     else
-                        Response.Write("<span style=\"margin-right: 5px; \"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary sold-out\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
+                        Response.Write("<span style=\"margin-right: 5px;\"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary sold-out\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
                 }
 
-                Response.Write("</div>\n");
+                Response.Write("</div></div><div style=\"clear: both;\"></div>\n");
             }
 		%>
 	</div>

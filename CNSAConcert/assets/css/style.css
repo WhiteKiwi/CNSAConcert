@@ -6,3 +6,12 @@
 .reserved {
     background-color: red;
 }
+
+.sold-out {
+	background-color: red !important;
+	pointer-events: none;
+}
+
+.active-check {
+
+}
