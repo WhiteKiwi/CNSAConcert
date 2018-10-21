@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <head runat="server">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title></title>
+	<title>CNSA CONCERT</title>
 
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css?ver=0.1">
 	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css?ver=0.1">
@@ -19,6 +19,7 @@
 		<h1 style="width: 50%; color: white; background-color: #707070; margin-left: 350px; padding: 10px 0px 10px 0px; text-align: center"><strong>Stage</strong></h1>
 		<h1 style="text-align: center; margin-bottom: 45px;"><strong>CN</strong></h1>
 		<%
+			
 			for (int i = 1; i <= 19; i++) {
 				Response.Write("<div style=\"margin-left: 130px; margin-top: 5px;\">");
 
