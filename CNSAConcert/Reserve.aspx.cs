@@ -11,6 +11,8 @@ namespace CNSAConcert {
 
 			Grade.Text = (string)Session["Grade"] == "1" ? "CN-" : "SA-";
 			AREA.Text = (string)Session["Grade"] == "1" ? "CN" : "SA";
+			OneBae.Text = SeatManager.GetLeftSeatsCount("1").ToString();
+			TwoBae.Text = SeatManager.GetLeftSeatsCount("2").ToString();
 
 			if (!String.IsNullOrEmpty(Request.Form["row"]) && !String.IsNullOrEmpty(Request.Form["col"])) {
 				int result = SeatManager.Reserve(new Seat {

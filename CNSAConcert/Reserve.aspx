@@ -78,9 +78,9 @@
 
 							<tr>
 								<td>
-									<p style="margin-left: 7px; margin-bottom: 1px"><font size="4">CN구역(1학년):23석</font></p>
+									<p style="margin-left: 7px; margin-bottom: 1px"><font size="4">CN구역(1학년): <asp:Label runat="server" ID="OneBae"></asp:Label></font></p>
 									<br />
-									<p style="margin-left: 7px"><font size="3">SA구역(2학년):매진</font></p>
+									<p style="margin-left: 7px"><font size="3">SA구역(2학년): <asp:Label runat="server" ID="TwoBae"></asp:Label></font></p>
 								</td>
 							</tr>
 
