@@ -101,7 +101,7 @@
 					<form method="post" runat="server">
 						<input id="row" name="row" type="hidden" value="" />
 						<input id="col" name="col" type="hidden" value="" />
-						<button style="width: 220px; height: 102px; background-color: #FFFFFF; color: black;" onclick="backhome()"><font size="6"><b>취소</b></font></button>
+						<button style="width: 220px; height: 102px; background-color: #FFFFFF; color: black;" onclick="backhome()" type="button"><font size="6"><b>취소</b></font></button>
 						<button type="submit" style="width: 220px; height: 102px; background-color: #707070; float: right; color: white;"><font size="6"><b>예매하기</b></font></button>
 					</form>
 				</td>
