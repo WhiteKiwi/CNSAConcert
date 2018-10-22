@@ -1,10 +1,10 @@
 ﻿.reservation-button {
-    height: 10px;
-    width: 10px;
+	height: 10px;
+	width: 10px;
 }
 
 .reserved {
-    background-color: red;
+	background-color: red;
 }
 
 .sold-out {
@@ -12,6 +12,6 @@
 	pointer-events: none;
 }
 
-.active-check {
-
+.not-yet:focus {
+	background-color: #295cd5 !important;
 }
