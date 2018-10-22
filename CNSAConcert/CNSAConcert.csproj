@@ -82,6 +82,7 @@
     <Content Include="admin\SeatManagement.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\images\black_home.png" />
     <Content Include="assets\images\getinback.png" />
     <Content Include="assets\images\home.png" />
     <Content Include="assets\images\lock.png" />

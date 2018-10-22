@@ -11,15 +11,12 @@ namespace CNSAConcert {
 
 			Seat seat = SeatManager.LoadReservation((string)Session["StudentNumber"], (string)Session["Grade"]);
 			if (seat.Row == "-1" || seat.Col == "-1") {
-				if ((string)Session["Grade"] == "1")
-					Reservation.Text = "CN - X - X";
-				else if ((string)Session["Grade"] == "2")
-					Reservation.Text = "SA - X - X";
+					Reservation.Text = "?열 ?번";
 			} else {
 				if ((string)Session["Grade"] == "1")
-					Reservation.Text = "CN - " + NumberToABC(int.Parse(seat.Row)) + " - " + seat.Col;
+					Reservation.Text = NumberToABC(int.Parse(seat.Row)) + "열 " + seat.Col + "번";
 				else if ((string)Session["Grade"] == "2")
-					Reservation.Text = "SA - " + NumberToABC(int.Parse(seat.Row)) + " - " + seat.Col;
+					Reservation.Text = NumberToABC(int.Parse(seat.Row)) + "열 " + seat.Col + "번";
 			}
 		}
 
@@ -32,6 +29,10 @@ namespace CNSAConcert {
 		private string NumberToABC(int n) {
 			char result = (char)(64 + n);
 			return result.ToString();
+		}
+
+		protected void homeButton_Click(object sender, System.Web.UI.ImageClickEventArgs e) {
+			Response.Redirect("/");
 		}
 	}
 }
