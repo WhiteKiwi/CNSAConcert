@@ -27,5 +27,9 @@ namespace CNSAConcert {
 				Response.Write("<script>alert('Passwords do not match'); window.location.replace('/Account.aspx');</script>");
 			}
 		}
+
+		protected void HomeButton_Click(object sender, System.Web.UI.ImageClickEventArgs e) {
+			Response.Redirect("/");
+		}
 	}
 }
