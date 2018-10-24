@@ -18,7 +18,8 @@
 		<h1 style="text-align: center; margin-bottom: 45px;"><strong><asp:Label runat="server" ID="AREA"></asp:Label></strong></h1>
 		<%
             bool[,] soldOutSeats = CNSAConcert.Managers.SeatManager.GetSoldOutSeats((string)Session["Grade"]);
-            for (int i = 3; i <= 21; i++) {
+			int row = ((string)Session["Grade"]) == "1" ? 21 : 19;
+            for (int i = 1; i <= row; i++) {
                 Response.Write("<div style=\"margin-left: 210px; margin-top: 5px;\">");
 
                 Response.Write("<span class=\"badge badge-primary\" style=\"font-size: 20px; background-color: gainsboro; color: black; width: 80px; margin-right: 10px; float: left;\">" + (char)(64 + i) + "</span><div style=\"float: left; padding-top: 2.5px;\">");
