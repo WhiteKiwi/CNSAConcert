@@ -14,7 +14,7 @@
 	<!-- NAVBAR -->
 	<div id="nav" class="navbar">
 		<div style="margin-top: 10px; margin-left: 20px;">
-			<img src="/assets/img/CNSALOGO.png" width="50" />
+			<a href="/Default.aspx"><img src="/assets/img/CNSALOGO.png" width="50" /></a>
 		</div>
 		<div><a href="/Account.aspx" class="nanum-square">비밀번호 변경</a></div>
 		<div><a href="/Reserve.aspx" class="nanum-square">예매</a></div>
