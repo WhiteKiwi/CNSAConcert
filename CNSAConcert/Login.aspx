@@ -18,7 +18,7 @@
 			<div class="login-char">
 				<!-- 왼쪽 -->
 				<div>
-					<div>
+					<div class="cncon-logo">
 						<div class="chaparralPro-light-italic">2018</div>
 						<div class="palatino-linotype">CNSA CONCERT</div>
 						<div class="chaparralPro-light-italic">ticketing page</div>

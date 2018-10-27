@@ -77,10 +77,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
     <Content Include="Account.aspx" />
     <Content Include="admin\Login.aspx" />
     <Content Include="admin\SeatManagement.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\font.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\files\background.mp4" />
     <Content Include="assets\img\background.jpg" />
@@ -91,6 +93,8 @@
     <Content Include="assets\img\cncon5.jpeg" />
     <Content Include="assets\img\cncon6.jpeg" />
     <Content Include="assets\img\cncon7.jpeg" />
+    <Content Include="assets\img\CNSALOGO.png" />
+    <Content Include="assets\img\background_main.jpg" />
     <Content Include="assets\img\photo_door.png" />
     <Content Include="assets\img\seat_alreadySelected.png" />
     <Content Include="assets\img\seat_notSelected.png" />
@@ -112,6 +116,13 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account.aspx.cs">
       <DependentUpon>Account.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -175,6 +186,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\fonts\NanumSquareB.eot" />
+    <Content Include="assets\fonts\NanumSquareB.ttf" />
+    <Content Include="assets\fonts\NanumSquareB.woff" />
+    <Content Include="assets\fonts\NanumSquareB.woff2" />
+    <Content Include="assets\fonts\NanumSquareR.eot" />
+    <Content Include="assets\fonts\NanumSquareR.ttf" />
+    <Content Include="assets\fonts\NanumSquareR.woff" />
+    <Content Include="assets\fonts\NanumSquareR.woff2" />
+    <Content Include="assets\fonts\ChaparralPro-Italic.otf" />
+    <Content Include="assets\fonts\ChaparralPro-LightIt.otf" />
+    <Content Include="assets\fonts\ChaparralPro-Regular.otf" />
+    <Content Include="assets\fonts\KCC-eunyoung.ttf" />
+    <Content Include="assets\fonts\Palatino-Linotype.ttf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -183,9 +207,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="assets\fonts\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

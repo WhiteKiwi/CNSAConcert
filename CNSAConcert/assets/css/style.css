@@ -42,23 +42,23 @@ html, body {
 	color: white;
 }
 
-	.login-char > div:nth-child(1) > div {
-		padding: 255px;
-		margin-top: 100px;
+.cncon-logo {
+	padding: 255px;
+	margin-top: 100px;
+}
+
+	.cncon-logo > div:nth-child(1) {
+		font-size: 36px;
 	}
 
-		.login-char > div:nth-child(1) > div > div:nth-child(1) {
-			font-size: 36px;
-		}
+	.cncon-logo > div:nth-child(2) {
+		font-size: 80px;
+	}
 
-		.login-char > div:nth-child(1) > div > div:nth-child(2) {
-			font-size: 80px;
-		}
-
-		.login-char > div:nth-child(1) > div > div:nth-child(3) {
-			font-size: 36px;
-			text-align: right;
-		}
+.cncon-logo > div:nth-child(3) {
+	font-size: 36px;
+	text-align: right;
+}
 
 /* 로그인 페이지 오른쪽 */
 .login-char > div:nth-child(2) {
@@ -248,4 +248,29 @@ html, body {
 	background-color: #464646;
 	height: 40px;
 	line-height: 40px;
+}
+
+
+/* About us 페이지 */
+.about-logo {
+	color: white;
+	margin: auto;
+	width: 642px;
+	padding-top: 200px;
+	padding-bottom: 0;
+}
+
+.background {
+	background-image: url('/assets/img/background.jpg');
+	background-size: cover;
+}
+
+.about-us-div {
+	color: white;
+	margin: auto;
+	text-align: center;
+}
+
+.about-us-div > div {
+	margin-bottom: 10px;
 }
