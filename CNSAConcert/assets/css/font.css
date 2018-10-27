@@ -1,0 +1,76 @@
+﻿/* 
+ * Nanum Square Web Fonts
+ * https://github.com/hiun/NanumSquare
+ * Copyright (c) 2010, NAVER Corporation (http://www.nhncorp.com) 
+ */
+
+@font-face {
+	font-family: 'Nanum Square';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../fonts/NanumSquareR.eot);
+	src: local('Nanum Square Regular'), local('NanumSquareR'), url(../fonts/NanumSquareR.eot?#iefix) format('embedded-opentype'), url(../fonts/NanumSquareR.woff2) format('woff2'), url(../fonts/NanumSquareR.woff) format('woff'), url(../fonts/NanumSquareR.ttf) format('truetype');
+}
+.nanum-square {
+	font-style: normal;
+	font-family: 'Nanum Square';
+}
+
+@font-face {
+	font-family: 'Nanum Square Bold';
+	font-weight: 700;
+	src: url(../fonts/NanumSquareB.eot);
+	src: local('Nanum Square Bold'), local('NanumSquareB'), url(../fonts/NanumSquareB.eot?#iefix) format('embedded-opentype'), url(../fonts/NanumSquareB.woff2) format('woff2'), url(../fonts/NanumSquareB.woff) format('woff'), url(../fonts/NanumSquareB.ttf) format('truetype');
+}
+.nanum-square-bold {
+	font-style: normal;
+	font-family: 'Nanum Square Bold';
+}
+
+@font-face {
+	font-family: 'Palatino Linotype';
+	src: url('../fonts/Palatino-Linotype.ttf');
+}
+.palatino-linotype {
+	font-style: normal;
+	font-family: 'Palatino Linotype';
+}
+
+@font-face {
+	font-family: 'KCC-eunyoung';
+	src: url('../fonts/KCC-eunyoung.ttf');
+}
+.kcc-eunyoung {
+	font-style: normal;
+	font-family: 'KCC-eunyoung';
+}
+
+@font-face {
+	font-family: 'ChaparralPro';
+	font-style: normal;
+	src: url('../fonts/ChaparralPro-Regular.otf');
+}
+.chaparralPro {
+	font-style: normal;
+	font-family: 'ChaparralPro';
+}
+
+@font-face {
+	font-family: 'ChaparralPro';
+	font-style: italic;
+	src: url('../fonts/ChaparralPro-Italic.otf');
+}
+.chaparralPro-italic {
+	font-family: 'ChaparralPro';
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'ChaparralPro-light';
+	font-style: italic;
+	src: url('../fonts/ChaparralPro-LightIt.otf');
+}
+.chaparralPro-light-italic {
+	font-family: 'ChaparralPro-light';
+	font-style: italic;
+}

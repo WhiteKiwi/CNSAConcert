@@ -5,10 +5,12 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CNSA CONCERT</title>
+	
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
 	<meta name="viewport" content="height=device-height,width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" href="/assets/css/font.css">
 </head>
 <body>
 	<article id="BigWrap">
@@ -17,15 +19,15 @@
 				<!-- 왼쪽 -->
 				<div>
 					<div>
-						<div>2018</div>
-						<div>CNSA CONCERT</div>
-						<div>ticketing page</div>
+						<div class="chaparralPro-light-italic">2018</div>
+						<div class="palatino-linotype">CNSA CONCERT</div>
+						<div class="chaparralPro-light-italic">ticketing page</div>
 					</div>
 				</div>
 
 				<!-- 오른쪽 -->
 				<div>
-					<form runat="server" class="login-form">
+					<form runat="server" class="login-form chaparralPro-light-italic">
 						<div class="input-div">
 							<div class="title-text">Student Number*</div>
 							<asp:TextBox runat="server" ID="StudentNumber" TextMode="SingleLine" CssClass="form-control underline-input"></asp:TextBox>
@@ -36,8 +38,8 @@
 							<div class="title-text">Password*</div>
 							<asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control underline-input"></asp:TextBox>
 						</div>
-						<div class="alert-text">초기 비밀번호는 학번입니다.<br /> 로그인 후 꼭 비밀번호를 변경해주세요.</div>
-						<asp:Button runat="server" ID="SignInButton" Text="로그인" OnClick="SignInButton_Click" CssClass="login-button" />
+						<div class="alert-text nanum-square">초기 비밀번호는 학번입니다.<br /> 로그인 후 꼭 비밀번호를 변경해주세요.</div>
+						<asp:Button runat="server" ID="SignInButton" Text="로그인" OnClick="SignInButton_Click" CssClass="login-button nanum-square-bold" />
 					</form>
 				</div>
 			</div>
