@@ -82,14 +82,26 @@
     <Content Include="admin\SeatManagement.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\style.css" />
-    <Content Include="assets\images\black_home.png" />
-    <Content Include="assets\images\getinback.png" />
-    <Content Include="assets\images\home.png" />
-    <Content Include="assets\images\lock.png" />
-    <Content Include="assets\images\login-background.jpg" />
-    <Content Include="assets\images\main_background.jpg" />
-    <Content Include="assets\images\cncon_homeImage.png" />
-    <Content Include="assets\images\personicon.png" />
+    <Content Include="assets\files\background.mp4" />
+    <Content Include="assets\img\background.jpg" />
+    <Content Include="assets\img\cncon1.jpeg" />
+    <Content Include="assets\img\cncon2.jpeg" />
+    <Content Include="assets\img\cncon3.jpeg" />
+    <Content Include="assets\img\cncon4.jpeg" />
+    <Content Include="assets\img\cncon5.jpeg" />
+    <Content Include="assets\img\cncon6.jpeg" />
+    <Content Include="assets\img\cncon7.jpeg" />
+    <Content Include="assets\img\photo_door.png" />
+    <Content Include="assets\img\seat_alreadySelected.png" />
+    <Content Include="assets\img\seat_notSelected.png" />
+    <Content Include="assets\img\seat_selected.png" />
+    <Content Include="assets\img\sidePointer_left.png" />
+    <Content Include="assets\img\sidePointer_right.png" />
+    <Content Include="assets\js\bigvideo.js" />
+    <Content Include="assets\js\imagesloaded.js" />
+    <Content Include="assets\js\imagesloaded.pkgd.min.js" />
+    <Content Include="assets\js\jquery-1.11.1.min.js" />
+    <Content Include="assets\js\video.js" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -172,7 +184,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\js\" />
+    <Folder Include="assets\fonts\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
