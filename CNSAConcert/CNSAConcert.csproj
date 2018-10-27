@@ -200,6 +200,7 @@
     <Content Include="assets\fonts\KCC-eunyoung.ttf" />
     <Content Include="assets\fonts\Palatino-Linotype.ttf" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CNSACONCERT.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

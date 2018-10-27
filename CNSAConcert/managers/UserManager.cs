@@ -30,7 +30,7 @@ namespace CNSAConcert.Managers {
 					user.Password = newPassword;
 
 					// Command Text - Update Password
-					commandText = "UPDATE " + USERTABLE + " SET Password='" + user.Password + "' Where Student_Number='" + user.StudentNumber+ "';";
+					commandText = "UPDATE " + USERTABLE + " SET Password='" + user.Password + "' Where Student_Number='" + user.StudentNumber + "';";
 					cmd.CommandText = commandText;
 
 					// The number of rows affected
@@ -42,7 +42,7 @@ namespace CNSAConcert.Managers {
 
 			return result;
 		}
-			
+
 		/// <summary>
 		/// Check the <c>User</c>'s Id and pw
 		/// </summary>
@@ -62,10 +62,13 @@ namespace CNSAConcert.Managers {
 				string commandText = string.Format("SELECT Password FROM {0} WHERE Student_Number='{1}';", USERTABLE, studentNumber);
 				var cmd = new MySqlCommand(commandText, conn);
 
-				// Check User's Password
-				if ((int)cmd.ExecuteScalar() == (inputPassword + "sGSf4YnR6I6I8Kj,GaCVwGSDfhRQ24i56lU6I3qI445EyoFN35J4Q38oy7").GetHashCode())
-					result = true;
-				
+				try {
+					// Check User's Password
+					if ((int)cmd.ExecuteScalar() == (inputPassword + "sGSf4YnR6I6I8Kj,GaCVwGSDfhRQ24i56lU6I3qI445EyoFN35J4Q38oy7").GetHashCode())
+						result = true;
+				} catch {
+					result = false;
+				}
 				// Connection Close
 				conn.Close();
 			}
