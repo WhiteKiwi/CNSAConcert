@@ -2,6 +2,9 @@
 .login-html, .login-html > body {
 	width: 100%;
 	height: 100%;
+}
+
+html, body {
 	margin: 0;
 	padding: 0;
 }
@@ -45,8 +48,6 @@
 	}
 
 		.login-char > div:nth-child(1) > div > div:nth-child(1) {
-			font-family: 'ChaparralPro-light';
-			font-style: italic;
 			font-size: 36px;
 		}
 
@@ -85,11 +86,11 @@
 			margin-bottom: 10px;
 		}
 
-		.login-form > .alert-text {
-			color: #E89090;
-			font-size: 15px;
-			margin: 25px;
-		}
+	.login-form > .alert-text {
+		color: #E89090;
+		font-size: 15px;
+		margin: 25px;
+	}
 
 .underline-input {
 	background-color: rgba(255, 255, 255, 0);
@@ -112,4 +113,139 @@
 	border-left-width: 0;
 	border-right-width: 0;
 	border-top-width: 0;
+}
+
+
+/* 메인 페이지 navbar */
+.navbar {
+	position: fixed;
+	height: 70px;
+	width: 100%;
+	line-height: 70px;
+}
+
+	.navbar > div {
+		float: left;
+		margin-right: 100px;
+	}
+
+		.navbar > div > a {
+			color: white;
+			text-decoration: none;
+			font-size: 18px;
+		}
+
+.scrolled {
+	background-color: #FEB0AE;
+}
+
+/* 메인페이지 탑 */
+.main-top {
+	background-image: url(/assets/img/background_main.jpg);
+	background-size: cover;
+	text-align: center;
+	color: white;
+	padding-top: 250px;
+	padding-bottom: 160px;
+}
+
+	.main-top > div:nth-child(1) {
+		font-size: 70px;
+	}
+
+.go-reservation {
+	width: 220px;
+	height: 55px;
+	background-color: white;
+	border-radius: 31px;
+	border: none;
+	font-size: 20px;
+}
+
+	.go-reservation:hover {
+		cursor: pointer;
+	}
+
+/* 메인페이지 소개 첫 번째 */
+.main-first > div:nth-child(1) {
+	float: left;
+	width: 50%;
+	padding-top: 200px;
+}
+
+	.main-first > div:nth-child(1) > div {
+		padding-left: 160px;
+	}
+
+		.main-first > div:nth-child(1) > div > h1 {
+			color: #FFD144;
+			font-size: 80px;
+			margin-bottom: 20px;
+		}
+
+		.main-first > div:nth-child(1) > div > span {
+			font-size: 20px;
+		}
+
+.main-first > div:nth-child(2) {
+	width: 50%;
+	float: left;
+	padding-top: 100px;
+}
+
+	/* 메인페이지 소개 두 번째 */
+	.main-first > div:nth-child(2) > div {
+		padding-left: 100px;
+	}
+
+		.main-first > div:nth-child(2) > div > h1 {
+			color: #D23EB0;
+			font-size: 80px;
+			margin-bottom: 20px;
+		}
+
+		.main-first > div:nth-child(2) > div > span {
+			font-size: 20px;
+		}
+
+/* 메인페이지 소개 세 번째 */
+.main-third > div {
+	float: right;
+	padding-right: 110px;
+	padding-top: 230px;
+}
+
+	.main-third > div > h1 {
+		color: #B46FEC;
+		font-size: 80px;
+		margin-bottom: 20px;
+	}
+
+	.main-third > div > span {
+		font-size: 20px;
+	}
+
+/* 메인페이지 소개 네 번째 */
+.main-fourth > div {
+	padding-left: 100px;
+}
+
+	.main-fourth > div > h1 {
+		color: #1B2F6E;
+		font-size: 80px;
+	}
+
+	.expression {
+		font-size: 20px;
+		color: white;
+		padding-left: 100px;
+	}
+
+/* copyright */
+.copyright {
+	text-align: center;
+	color: white;
+	background-color: #464646;
+	height: 40px;
+	line-height: 40px;
 }
