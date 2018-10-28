@@ -7,109 +7,142 @@
 	<title>CNSA CONCERT</title>
 	<link rel="shortcut icon" href="/assets/img/favicon.png" />
 
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css?ver=0.1">
-	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css?ver=0.1">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+	<link rel="stylesheet" href="/assets/css/font.css">
 </head>
-<body>
-	<!-- 본문에 대한 코드 -->
-	<div class=" col-9 container" style="text-align: left; float: left; padding: 2rem; position: relative;">
-		<!-- 제목 -->
-		<br>
-		<h1 style="width: 50%; color: white; background-color: #707070; margin-left: 350px; padding: 10px 0px 10px 0px; text-align: center"><strong>Stage</strong></h1>
-		<h1 style="text-align: center; margin-bottom: 45px;"><strong><asp:Label runat="server" ID="AREA"></asp:Label></strong></h1>
-		<%
-            bool[,] soldOutSeats = CNSAConcert.Managers.SeatManager.GetSoldOutSeats((string)Session["Grade"]);
-			int row = ((string)Session["Grade"]) == "1" ? 21 : 19;
-            for (int i = 1; i <= row; i++) {
-                Response.Write("<div style=\"margin-left: 210px; margin-top: 5px;\">");
+<body class="background">
+	<!-- NAVBAR -->
+	<div id="nav" class="navbar" style="position: relative;">
+		<div style="margin-top: 10px; margin-left: 20px;">
+			<a href="/Default.aspx">
+				<img src="/assets/img/CNSALOGO.png" width="50" /></a>
+		</div>
+		<div><a href="/Account.aspx" class="nanum-square">비밀번호 변경</a></div>
+		<div><a href="/Reserve.aspx" class="nanum-square">예매</a></div>
+		<div><a href="/ReserveCheck.aspx" class="nanum-square">예매 확인</a></div>
+		<div><a href="/AboutUs.aspx" class="nanum-square">About us</a></div>
+		<div style="float: right;"><a href="/Logout.aspx" class="nanum-square">로그아웃</a></div>
+	</div>
+	<div style="content: ''; display: table; clear: both;"></div>
 
-                Response.Write("<span class=\"badge badge-primary\" style=\"font-size: 20px; background-color: gainsboro; color: black; width: 80px; margin-right: 10px; float: left;\">" + (char)(64 + i) + "</span><div style=\"float: left; padding-top: 2.5px;\">");
+	<!-- 예매 -->
+	<div class="reservation">
+		<!-- 왼쪽 -->
+		<div class="nanum-square">
+			<br />
+			<asp:Label runat="server" ID="AREA" class="chaparralPro reservation-area-h1"></asp:Label>
+			<div class="reservation-alert">
+				<h1>안내사항</h1>
+				<div>CNSA CONCERT 2018</div>
+				<div>장소 : 충남삼성고등학교 충무관</div>
+				<div>일시 : 2018년 11월 30일 19시 20분</div>
+				<div>티켓을 지참하셔야 출입이 가능합니다.</div>
 
-                for (int j = 1; j <= 19; j++) {
-                    if (!soldOutSeats[i - 1, j - 1])
-                        Response.Write("<span style=\"margin-right: 5px;\"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary not-yet\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
-                    else
-                        Response.Write("<span style=\"margin-right: 5px;\"><a href=\"javascript:selectSeat(" + i + ", " + j + ")\" class=\"badge badge-primary sold-out\" style=\"background-color: #5BC0DE; font-size: 20px; width: 40px; padding-top: 20px;\">   </a></span>");
-                }
+				<br />
+				<br />
+				<br />
 
-                Response.Write("</div></div><div style=\"clear: both;\"></div>\n");
-            }
-		%>
+				<h1>주의사항</h1>
+				<div>주의사항은 다음과 같습니다.</div>
+				<div>본인만이 본인 좌석을 선택할 수 있으며</div>
+				<div>타 학생의 개인정보를 이용하여 좌석</div>
+				<div>예매시 불이익이 있을 수 있습니다.</div>
+			</div>
+		</div>
+
+		<!-- 가운데 -->
+		<div>
+			<h1 class="nanum-square reservation-title">좌석 선택</h1>
+			<div class="reservation-div chaparralPro">
+				<div>
+					<div class="num"></div>
+					<div class="num">1</div>
+					<div class="num">2</div>
+					<div class="num">3</div>
+					<div class="num">4</div>
+					<div class="num">5</div>
+					<div class="num">6</div>
+					<div class="num">7</div>
+					<div class="num">8</div>
+					<div class="num">9</div>
+					<div class="num">10</div>
+					<div class="num">11</div>
+					<div class="num">12</div>
+					<div class="num">13</div>
+					<div class="num">14</div>
+					<div class="num">15</div>
+					<div class="num">16</div>
+					<div class="num">17</div>
+					<div class="num">18</div>
+				</div>
+				<div style="content: ''; display: table; clear: both;"></div>
+
+				<%
+					bool[,] soldOutSeats = CNSAConcert.Managers.SeatManager.GetSoldOutSeats((string)Session["Grade"]);
+					int row = ((string)Session["Grade"]) == "1" ? 21 : 19;
+					for (int i = 3; i <= row; i++) {
+						Response.Write("<div><div class=\"num\">" + (char)(64 + i) + "</div>");
+
+						for (int j = 1; j <= 19; j++) {
+							if (!soldOutSeats[i - 1, j - 1])
+								Response.Write("<button class=\"seat-button\" onclick=\"selectSeat(" + i + ", " + j + ")\"></button>");
+							else
+								Response.Write("<button class=\"seat-button soldout\" onclick=\"selectSeat(" + i + ", " + j + ")\"></button>");
+						}
+
+						Response.Write("</div>\n");
+					}
+				%>
+				<div style="content: ''; display: table; clear: both;"></div>
+			</div>
+		</div>
+
+		<!-- 오른쪽 -->
+		<div class="nanum-square">
+			<h1 class="reservation-title">티켓 정보</h1>
+			<form runat="server" class="reservation-info" method="post" action="/Reservation.aspx">
+				<input type="hidden" id="row" name="row" />
+				<input type="hidden" id="col"  name="col" />
+				<div class="font-size-20" style="color: #2B2B2B; font-weight: 600; margin-bottom: 20px;">콘서트 정보</div>
+				<div class="font-size-28 color-pink" style="margin-bottom: 10px;">CNSA CONCERT 2018</div>
+				<div class="font-size-20" style="color: #3A3A3A;">2018/11/30 19:20 ~ 22:10</div>
+				<br />
+				<br />
+				<br />
+
+				<div class="font-size-20" style="color: #2B2B2B; font-weight: 600; margin-bottom: 20px;">예매자 정보</div>
+				<div class="font-size-24 color-pink" style="margin-bottom: 20px; margin-right: 35px; float: left;">이름</div>
+				<div class="font-size-22" style="color: #444444; float: left;">
+					<asp:Label runat="server" ID="Name"></asp:Label></div>
+				<div style="content: ''; display: table; clear: both;"></div>
+				<div class="font-size-24 color-pink" style="margin-bottom: 20px; margin-right: 35px; float: left;">학번</div>
+				<div class="font-size-22" style="color: #444444; float: left;"><%= (string)Session["StudentNumber"] %></div>
+				<div style="content: ''; display: table; clear: both;"></div>
+				<br />
+				<br />
+				<br />
+
+				<div class="font-size-20" style="color: #2B2B2B; font-weight: 600; margin-bottom: 20px;">얘매 내역</div>
+				<div id="seat" style="display: none;">
+					<div class="font-size-30 color-pink" style="margin-bottom: 10px;">
+						<asp:Label runat="server" ID="Grade"></asp:Label><span id="reservation"></span>
+					</div>
+				</div>
+				<div class="font-size-20" style="color: #454545;">2018년 11월 30일 19시 20분</div>
+
+				<div class="reservation-submit">
+					<div>예매 완료 시 좌석 변경이 불가능합니다</div>
+					<div>좌석을 다시 한 번 확인해주세요</div>
+					<br />
+					<button type="submit" class="reservation-submit-button">예매 완료 하기</button>
+				</div>
+			</form>
+		</div>
 	</div>
 
-	<div class="col-3 border border-bottom-0 border-secondary text-left" style="padding: 1rem; float: left; overflow: auto; background-color: #EFF0EB; height: 100%">
-
-		<table style="width: 450px; height: 800px; margin-bottom: 20px; background-color: #EFF0EB; border-left: 3px solid #707070; border-right: 3px solid #707070; float: right">
-			<tr style="margin-top: 64px;">
-				<td>
-
-					<div style="width: 207px; height: 341px; background-color: #FFFFFF; float: left; margin-left: 43px; margin-top: 55px; border: 3px solid #707070">
-					</div>
-
-					<div style="width: 144.7px; height: 321.5px; float: right; margin-right: 43px; margin-top: 50px; margin-bottom: 64px">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-						<hr style="border: 2px solid  #707070; margin-bottom: 15px; background-color: #707070;">
-					</div>
-
-				</td>
-			</tr>
-
-			<tr>
-				<td style="border-top: 3px solid #707070;">
-					<div style="margin-top: 30px;">
-						<b style="margin-left: 80px; font-size: 30px;">잔여석</b>
-					</div>
-
-					<div>
-						<table style="width: 304px; background-color: #FFFFFF; margin-top: 10px; margin-bottom: 60px; margin-left: 65px; border: 3px solid #707070;">
-
-							<tr>
-								<td>
-									<p style="margin-left: 7px; margin-bottom: 1px"><font size="4">CN구역(1학년): <asp:Label runat="server" ID="OneBae"></asp:Label></font></p>
-									<br />
-									<p style="margin-left: 7px"><font size="3">SA구역(2학년): <asp:Label runat="server" ID="TwoBae"></asp:Label></font></p>
-								</td>
-							</tr>
-
-							<tr>
-								<td style="border-top: 3px solid #707070;">
-									<p style="margin-left: 7px">선택좌석</p>
-
-									<div style="width: 26.35px; height: 26.35px; background-color: #5BC0DE; margin-left: 7px; margin-bottom: 35px; float: left;"></div>
-									<div id="seat" style="margin-bottom: 20px; float: left; display: none;">
-										&nbsp;<asp:Label runat="server" ID="Grade" name="grade"></asp:Label><span id="reservation" name="reservation"></span>
-									</div>
-								</td>
-							</tr>
-						</table>
-					</div>
-
-
-					<form method="post" runat="server">
-						<input id="row" name="row" type="hidden" value="" />
-						<input id="col" name="col" type="hidden" value="" />
-						<button style="width: 220px; height: 102px; background-color: #FFFFFF; color: black;" onclick="backhome()" type="button"><font size="6"><b>취소</b></font></button>
-						<button type="submit" style="width: 220px; height: 102px; background-color: #707070; float: right; color: white;"><font size="6"><b>예매하기</b></font></button>
-					</form>
-				</td>
-			</tr>
-		</table>
-	</div>
+	<!-- Copyright -->
+	<div class="nanum-square about-us-div copyright-page copyright-reservation">Developed by 장지훈, 정원배, 김재훈, 김지은, 김산 Designed by 이호은 Copyright 2018 CNSA CONCERT All Right Reserved</div>
 
 	<script>
 		function selectSeat(row, col) {
@@ -117,13 +150,9 @@
 			document.getElementById("col").value = col;
 			// grade display: none;
 			document.getElementById("seat").style.display = "block";
-			document.getElementById("reservation").innerText = String.fromCharCode(64 + row) + "열-" + (col < 10 ? "0" + col : col) + "번";
+			document.getElementById("reservation").innerText = String.fromCharCode(64 + row) + "열-" + (col < 10 ? "0" + col : col);
 
 			// "#reservation".Text row + "-" + col
-		}
-
-		function backhome() {
-			window.location.href = "/";
 		}
 	</script>
 </body>

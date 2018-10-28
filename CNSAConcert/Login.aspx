@@ -32,14 +32,15 @@
 						<div class="input-div">
 							<div class="title-text">Student Number*</div>
 							<asp:TextBox runat="server" ID="StudentNumber" TextMode="SingleLine" CssClass="form-control underline-input"></asp:TextBox>
-							<br />	
+							<br />
 							<br />
 							<br />
 							<br />
 							<div class="title-text">Password*</div>
 							<asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control underline-input"></asp:TextBox>
 						</div>
-						<div class="alert-text nanum-square">초기 비밀번호는 학번입니다.<br /> 로그인 후 꼭 비밀번호를 변경해주세요.</div>
+						<div class="alert-text nanum-square">초기 비밀번호는 학번입니다.<br />
+							로그인 후 꼭 비밀번호를 변경해주세요.</div>
 						<asp:Button runat="server" ID="SignInButton" Text="로그인" OnClick="SignInButton_Click" CssClass="login-button nanum-square-bold" />
 					</form>
 				</div>
@@ -73,15 +74,14 @@
 		if (mobilecheck()) {
 			BV.show('/assets/img/background.jpg');
 			//모바일일 경우 비디오 대신 대체할 이미지입니다.
-		} else {
-			BV.doLoop = true;
-			BV.show(
-				{ type: "video/mp4", src: "/assets/files/background.mp4", doLoop: true },
-				{ type: "video/mp4", src: "/assets/files/background.mp4", doLoop: true }
-			);
+		}
+		BV.doLoop = true;
+		BV.show(
+			{ type: "video/mp4", src: "/assets/files/background.mp4", doLoop: true },
+			{ type: "video/mp4", src: "/assets/files/background.mp4", doLoop: true }
+		);
 			//웹브라우저마다 지원하는 비디오 형식이 다르기 때문에 다양하게 만들어서 제공해야합니다. 변환은 다음팟인코더나, 카카오인코더를 이용하세요. 
 			//옵션중에 doLoop는 영상 반복을 의미합니다. true는 영상 반복, false는 반복 안함입니다.
-		}
 	</script>
 </body>
 </html>
