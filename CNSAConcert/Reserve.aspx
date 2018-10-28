@@ -84,11 +84,11 @@
 					for (int i = 3; i <= row; i++) {
 						Response.Write("<div><div class=\"num\">" + (char)(64 + i) + "</div>");
 
-						for (int j = 1; j <= 19; j++) {
+						for (int j = 1; j <= 18; j++) {
 							if (!soldOutSeats[i - 1, j - 1])
 								Response.Write("<button class=\"seat-button\" onclick=\"selectSeat(" + i + ", " + j + ")\"></button>");
 							else
-								Response.Write("<button class=\"seat-button soldout\" onclick=\"selectSeat(" + i + ", " + j + ")\"></button>");
+								Response.Write("<button class=\"seat-button soldout\" disabled></button>");
 						}
 
 						Response.Write("</div>\n");
