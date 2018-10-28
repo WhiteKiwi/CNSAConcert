@@ -5,6 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CNSA CONCERT</title>
+	<link rel="shortcut icon" href="/assets/img/favicon.png" />
 
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 

@@ -6,6 +6,7 @@
 <head runat="server">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CNSA CONCERT</title>
+	<link rel="shortcut icon" href="/assets/img/favicon.png" />
 
 	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css?ver=0.1">
 

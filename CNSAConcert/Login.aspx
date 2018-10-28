@@ -5,7 +5,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CNSA CONCERT</title>
-	
+	<link rel="shortcut icon" href="/assets/img/favicon.png" />
+
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
 	<meta name="viewport" content="height=device-height,width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
@@ -73,7 +74,9 @@
 			BV.show('/assets/img/background.jpg');
 			//모바일일 경우 비디오 대신 대체할 이미지입니다.
 		} else {
+			BV.doLoop = true;
 			BV.show(
+				{ type: "video/mp4", src: "/assets/files/background.mp4", doLoop: true },
 				{ type: "video/mp4", src: "/assets/files/background.mp4", doLoop: true }
 			);
 			//웹브라우저마다 지원하는 비디오 형식이 다르기 때문에 다양하게 만들어서 제공해야합니다. 변환은 다음팟인코더나, 카카오인코더를 이용하세요. 

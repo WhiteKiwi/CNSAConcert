@@ -5,6 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>CNSA CONCERT</title>
+	<link rel="shortcut icon" href="/assets/img/favicon.png" />
 
 	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
@@ -45,6 +46,7 @@
 		<div><span class="chaparralPro">Front-End Developer </span><span class="nanum-square">김재훈</span></div>
 		<div><span class="chaparralPro">Front-End Developer </span><span class="nanum-square">김지은</span></div>
 		<div><span class="chaparralPro">Back-End Developer </span><span class="nanum-square">정원배</span></div>
+		<div><span class="chaparralPro">Back-End Developer </span><span class="nanum-square">김산</span></div>
 		<div><span class="chaparralPro">Lead Designer </span><span class="nanum-square">이호은</span></div>
 	</div>
 

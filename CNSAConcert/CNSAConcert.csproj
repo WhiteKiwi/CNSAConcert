@@ -95,6 +95,7 @@
     <Content Include="assets\img\cncon7.jpeg" />
     <Content Include="assets\img\CNSALOGO.png" />
     <Content Include="assets\img\background_main.jpg" />
+    <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\photo_door.png" />
     <Content Include="assets\img\seat_alreadySelected.png" />
     <Content Include="assets\img\seat_notSelected.png" />
