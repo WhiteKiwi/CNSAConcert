@@ -8,27 +8,25 @@
 	<title>CNSA CONCERT</title>
 	<link rel="shortcut icon" href="/assets/img/favicon.png" />
 
-	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css?ver=0.1">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
-	<style>
-		.cancel-button {
-			font-size: 30px;
-			color: white;
-			background-color: #7AC8DC;
-			border-color: #7AC8DC;
-		}
-
-		.seat-label {
-			font-size: 40px;
-			margin-left: 658px;
-		}
-
-		.image-style{
-			margin-left: 1500px; height: 80px; width: 80px;
-		}
-	</style>
+	<link rel="stylesheet" href="/assets/css/font.css">
 </head>
-<body>
+<body class="background">
+	<!-- NAVBAR -->
+	<div id="nav" class="navbar">
+		<div style="margin-top: 10px; margin-left: 20px;">
+			<a href="/Default.aspx"><img src="/assets/img/CNSALOGO.png" width="50" /></a>
+		</div>
+		<div><a href="/Account.aspx" class="nanum-square">비밀번호 변경</a></div>
+		<div><a href="/Reserve.aspx" class="nanum-square">예매</a></div>
+		<div><a href="/ReserveCheck.aspx" class="nanum-square">예매 확인</a></div>
+		<div><a href="/AboutUs.aspx" class="nanum-square">About us</a></div>
+		<div style="float: right;"><a href="/Logout.aspx" class="nanum-square">로그아웃</a></div>
+	</div>
+	<div style="content: ''; display: table; clear: both;"></div>
+
+
 	<form runat="server">
 		<div style="margin: 20px 0px 20px 150px;">
 			<div>
@@ -61,5 +59,8 @@
 			</div>
 		</div>
 	</form>
+
+	<!-- Copyright -->
+	<div class="nanum-square about-us-div copyright-page">Developed by 장지훈, 정원배, 김재훈, 김지은, 김산 Designed by 이호은 Copyright 2018 CNSA CONCERT All Right Reserved</div>
 </body>
 </html>

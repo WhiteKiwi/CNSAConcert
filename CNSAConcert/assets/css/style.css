@@ -55,10 +55,10 @@ html, body {
 		font-size: 80px;
 	}
 
-.cncon-logo > div:nth-child(3) {
-	font-size: 36px;
-	text-align: right;
-}
+	.cncon-logo > div:nth-child(3) {
+		font-size: 36px;
+		text-align: right;
+	}
 
 /* 로그인 페이지 오른쪽 */
 .login-char > div:nth-child(2) {
@@ -80,17 +80,17 @@ html, body {
 		text-align: left;
 	}
 
-		.login-form > .input-div > .title-text {
-			color: #313131;
-			font-size: 20px;
-			margin-bottom: 10px;
-		}
+.input-div > .title-text {
+	color: #313131;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
 
-	.login-form > .alert-text {
-		color: #E89090;
-		font-size: 15px;
-		margin: 25px;
-	}
+.login-form > .alert-text {
+	color: #E89090;
+	font-size: 15px;
+	margin: 25px;
+}
 
 .underline-input {
 	background-color: rgba(255, 255, 255, 0);
@@ -235,11 +235,11 @@ html, body {
 		font-size: 80px;
 	}
 
-	.expression {
-		font-size: 20px;
-		color: white;
-		padding-left: 100px;
-	}
+.expression {
+	font-size: 20px;
+	color: white;
+	padding-left: 100px;
+}
 
 /* copyright */
 .copyright {
@@ -271,6 +271,53 @@ html, body {
 	text-align: center;
 }
 
-.about-us-div > div {
-	margin-bottom: 10px;
+	.about-us-div > div {
+		margin-bottom: 10px;
+	}
+
+/* 비밀번호 변경 페이지 */
+.copyright-page {
+	font-size: 18px;
+	position: absolute;
+	bottom: 5px;
+	width: 100%;
+}
+
+.account-div {
+	width: 100%;
+	text-align: center;
+}
+
+	.account-div > form {
+		width: 600px;
+		height: 600px;
+		padding: 40px;
+		background-color: white;
+		margin: auto;
+		text-align: left;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		border-radius: 8px;
+	}
+
+		.account-div > form > h1 {
+			font-size: 34px;
+			color: #EE8896;
+			margin-bottom: 0;
+		}
+
+		.account-div > form > h2 {
+			font-size: 15px;
+			font-weight: 100;
+			color: #2B2B2B;
+		}
+
+.account-button {
+	border: 0;
+	border-radius: 16px;
+	width: 380px;
+	height: 50px;
+	font-size: 20px;
+	background-color: #EE8896;
+	color: white;
 }

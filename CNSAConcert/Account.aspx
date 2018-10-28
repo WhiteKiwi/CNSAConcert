@@ -8,68 +8,65 @@
 	<title>CNSA CONCERT</title>
 	<link rel="shortcut icon" href="/assets/img/favicon.png" />
 
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css?ver=0.1">
-	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.min.css?ver=0.1">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 
-	<style>
-		body {
-			background-color: lightskyblue;
-		}
-
-			body:after {
-				background-image: url("/assets/images/getinback.png");
-				top: 0;
-				left: 0;
-				position: absolute;
-				background-size: 100%;
-				opacity: 0.5 !important;
-				filter: alpha(opacity=50);
-				z-index: -1;
-				content: "";
-				width: 100%;
-				height: 100%;
-			}
-
-		.input-form {
-			width: 50%;
-			margin-left: 25%;
-			height: 50px;
-		}
-
-		.image-style {
-			width: 80px; height: 80px; margin-left: 1500px;
-		}
-
-		.btn {
-			background-color: #163F5E;
-		}
-	</style>
+	<link rel="stylesheet" href="/assets/css/font.css">
 </head>
-<body>
-	<form runat="server">
-		<div style="margin: 30px 30px;">
-			<asp:ImageButton ID="HomeButton" runat="server" ImageUrl="/assets/images/home.png" CssClass="image-style" OnClick="HomeButton_Click"/>
-			<div>
-				<img src="/assets/images/lock.png" style="width: 250px; height: 250px; margin-left: 800px;" />
-				<h1 style="margin-left: 800px; margin-top: 30px; color: white">비밀번호 변경</h1>
-			</div>
-
-			<div style="margin-left: 400px; background-color: white; width: 1000px; padding-top: 30px; height: 400px;">
-				<div class="form-group">
-					<asp:TextBox runat="server" ID="OldPassword" TextMode="Password" placeholder="현재 비밀번호" CssClass="form-control input-form" Font-Bold="true"></asp:TextBox><br />
-				</div>
-
-				<div class="form-group">
-					<asp:TextBox runat="server" ID="NewPassword" TextMode="Password" placeholder="새 비밀번호" CssClass="form-control input-form" Font-Bold="true"></asp:TextBox><br />
-				</div>
-
-				<div class="form-group">
-					<asp:TextBox runat="server" ID="NewPassword2" TextMode="Password" placeholder="새 비밀번호 확인" CssClass="form-control input-form" Font-Bold="true"></asp:TextBox><br />
-				</div>
-
-				<asp:Button runat="server" ID="ApplyButton" Text="확인" CssClass="input-form btn btn-primary" OnClick="ApplyButton_Click" Font-Size="X-Large" Font-Bold="true"/>
-			</div>
+<body class="background">
+	<!-- NAVBAR -->
+	<div id="nav" class="navbar">
+		<div style="margin-top: 10px; margin-left: 20px;">
+			<a href="/Default.aspx">
+				<img src="/assets/img/CNSALOGO.png" width="50" /></a>
 		</div>
-	</form>
+		<div><a href="/Account.aspx" class="nanum-square">비밀번호 변경</a></div>
+		<div><a href="/Reserve.aspx" class="nanum-square">예매</a></div>
+		<div><a href="/ReserveCheck.aspx" class="nanum-square">예매 확인</a></div>
+		<div><a href="/AboutUs.aspx" class="nanum-square">About us</a></div>
+		<div style="float: right;"><a href="/Logout.aspx" class="nanum-square">로그아웃</a></div>
+	</div>
+	<div style="content: ''; display: table; clear: both;"></div>
+
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+
+	<!-- 변경 칸 -->
+	<div class="account-div">
+		<form runat="server" class="chaparralPro-light-italic input-div">
+			<h1 class="nanum-square">비밀번호 변경</h1>
+			<h2 class="nanum-square">계정 도용 방지를 위해 반드시 비밀번호를 변경해주세요.<br />
+				초기 비밀번호는 학번입니다.<br />
+				비밀번호 미변경으로 인한 계정 도용 사례의 책임은 본인에게 있습니다.<br />
+				절대 다른 사람에게 계정을 알려주지 마십시오.</h2>
+			<br />
+			<br />
+			<div class="title-text">Current Password*</div>
+			<asp:TextBox runat="server" ID="OldPassword" TextMode="Password" CssClass="form-control underline-input"></asp:TextBox><br />
+			<br />
+			<br />
+			<br />
+			<div class="title-text">New Passsword*</div>
+			<asp:TextBox runat="server" ID="NewPassword" TextMode="Password" CssClass="form-control underline-input"></asp:TextBox><br />
+			<br />
+			<br />
+			<br />
+			<div class="title-text">Confirm Password*</div>
+			<asp:TextBox runat="server" ID="NewPassword2" TextMode="Password" CssClass="form-control underline-input"></asp:TextBox><br />
+			<br />
+			<br />
+			<br />
+			<div style="width: 100%; text-align: center;">
+				<asp:Button runat="server" ID="ApplyButton" Text="확인" CssClass="account-button nanum-square" OnClick="ApplyButton_Click"/>
+			</div>
+		</form>
+	</div>
+
+	<!-- Copyright -->
+	<div class="nanum-square about-us-div copyright-page">Developed by 장지훈, 정원배, 김재훈, 김지은, 김산 Designed by 이호은 Copyright 2018 CNSA CONCERT All Right Reserved</div>
 </body>
 </html>

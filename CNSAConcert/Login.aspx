@@ -32,7 +32,7 @@
 						<div class="input-div">
 							<div class="title-text">Student Number*</div>
 							<asp:TextBox runat="server" ID="StudentNumber" TextMode="SingleLine" CssClass="form-control underline-input"></asp:TextBox>
-							<br />
+							<br />	
 							<br />
 							<br />
 							<br />

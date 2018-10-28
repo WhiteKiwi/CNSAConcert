@@ -6,7 +6,7 @@ namespace CNSAConcert {
 	public partial class Account : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
 			// Redirect to the Login page if the session does not exist
-			if (String.IsNullOrEmpty((string)Session["StudentNumber"]) || String.IsNullOrEmpty((string)Session["Grade"]))
+			if (string.IsNullOrEmpty((string)Session["StudentNumber"]) || string.IsNullOrEmpty((string)Session["Grade"]))
 				Response.Redirect("/Login.aspx");
 		}
 
@@ -26,10 +26,6 @@ namespace CNSAConcert {
 				// Notify If passwords do not match
 				Response.Write("<script>alert('Passwords do not match'); window.location.replace('/Account.aspx');</script>");
 			}
-		}
-
-		protected void HomeButton_Click(object sender, System.Web.UI.ImageClickEventArgs e) {
-			Response.Redirect("/");
 		}
 	}
 }
