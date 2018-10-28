@@ -62,8 +62,8 @@
 		}
 		BV.doLoop = true;
 		BV.show(
-			{ type: "video/mp4", src: "/assets/files/background.mp4", doLoop: false },
-			{ type: "video/mp4", src: "/assets/files/background.mp4", doLoop: true }
+			{ type: "video/mp4", src: "/assets/files/aboutus1.mp4", doLoop: false },
+			{ type: "video/mp4", src: "/assets/files/aboutus2.mp4", doLoop: true }
 		);
 			//웹브라우저마다 지원하는 비디오 형식이 다르기 때문에 다양하게 만들어서 제공해야합니다. 변환은 다음팟인코더나, 카카오인코더를 이용하세요. 
 			//옵션중에 doLoop는 영상 반복을 의미합니다. true는 영상 반복, false는 반복 안함입니다.
