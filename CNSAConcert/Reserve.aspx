@@ -123,7 +123,7 @@
 				<br />
 				<br />
 
-				<div class="font-size-20" style="color: #2B2B2B; font-weight: 600; margin-bottom: 20px;">얘매 내역</div>
+				<div class="font-size-20" style="color: #2B2B2B; font-weight: 600; margin-bottom: 20px;">티켓 정보</div>
 				<div id="seat" style="display: none;">
 					<div class="font-size-30 color-pink" style="margin-bottom: 10px;">
 						<asp:Label runat="server" ID="Grade"></asp:Label><span id="reservation"></span>
