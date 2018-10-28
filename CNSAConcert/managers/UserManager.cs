@@ -75,5 +75,26 @@ namespace CNSAConcert.Managers {
 
 			return result;
 		}
+
+		public static string GetStudentName(string studentNumber) {
+			string result = "";
+
+			// Connect to DB
+			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {
+				conn.Open();
+
+				// Command Text - Select Password
+				string commandText = string.Format("SELECT Name FROM {0} WHERE Student_Number='{1}';", USERTABLE, studentNumber);
+				var cmd = new MySqlCommand(commandText, conn);
+
+				// Check User's Password
+				result = (string)cmd.ExecuteScalar();
+						
+				// Connection Close
+				conn.Close();
+			}
+
+			return result;
+		}
 	}
 }
