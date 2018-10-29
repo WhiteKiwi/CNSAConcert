@@ -16,7 +16,7 @@ namespace CNSAConcert {
 				} else if (result == -1) {
 					Response.Write("<script>alert('예매에 실패하였습니다'); location.href='/Reserve.aspx';</script>");
 				} else if (result == -3) {
-					Response.Write("<script>alert('이미 예매하셨습니다'); location.href='/Reserve.aspx';</script>");
+					Response.Write("<script>alert('이미 예매하셨습니다'); location.href='/';</script>");
 				} else {
 					Response.Write("<script>alert('예매에 성공하셨습니다'); location.href='/ReserveCheck.aspx';</script>");
 				}
