@@ -61,7 +61,7 @@
 			//모바일일 경우 비디오 대신 대체할 이미지입니다.
 		}
 		BV.show(
-			{ type: "video/mp4", src: "/assets/files/aboutus1.mp4", doLoop: false },
+			{ type: "video/mp4", src: "/assets/files/aboutus1.mp4"},
 			{ type: "video/mp4", src: "/assets/files/aboutus2.mp4", doLoop: true }
 		);
 			//웹브라우저마다 지원하는 비디오 형식이 다르기 때문에 다양하게 만들어서 제공해야합니다. 변환은 다음팟인코더나, 카카오인코더를 이용하세요. 

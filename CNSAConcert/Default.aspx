@@ -27,8 +27,8 @@
 
 	<!-- 메인 탑 -->
 	<div class="main-top">
-		<div class="kcc-eunyoung">
-			가족과 함께하는 행복한 2018 큰사 콘서트<br />
+		<div class="kcc-eunyoung" style="user-select: none;">
+			가족과 함께하는 행복한 2018 큰사 콘서트에<br />
 			여러분을 초대합니다.
 		</div>
 		<br />
@@ -38,7 +38,7 @@
 	</div>
 
 	<!-- 소개 -->
-	<div id="About-Concert" class="main-first">
+	<div id="About-Concert" class="main-first" style="user-select: none;">
 		<!-- 왼쪽 -->
 		<div>
 			<div>
@@ -80,7 +80,7 @@
 	</div>
 
 	<!-- 세 번째 소개 -->
-	<div class="main-third">
+	<div class="main-third" style="user-select: none;">
 		<img src="/assets/img/cncon6.jpeg" width="1200" />
 		<div>
 			<h1 class="kcc-eunyoung">모두가 하나 되는 순간</h1>
@@ -102,14 +102,14 @@
 	<br />
 
 	<!-- 네 번째 소개 -->
-	<div class="main-fourth">
+	<div class="main-fourth" style="user-select: none;">
 		<div>
 			<h1 class="kcc-eunyoung">잊지 못할 또 하나의 추억</h1>
 		</div>
 	</div>
 	<div style="content: ''; display: table; clear: both;"></div>
 
-	<div style="background-image: url('/assets/img/cncon7.jpeg'); background-size: cover; height: 500px; margin-top: -40px;">
+	<div style="background-image: url('/assets/img/cncon7.jpeg'); background-size: cover; height: 500px; margin-top: -40px; user-select: none;">
 		<br />
 		<br />
 		<span class="expression">충남삼성고등학교 학생들은 1인1기를 통해</span><br />
@@ -118,7 +118,7 @@
 	</div>
 
 	<!-- Copyright -->
-	<div class="copyright">Developed by 장지훈, 정원배, 김재훈, 김지은, 김산 Designed by 이호은, 정지우 Copyright 2018 CNSA CONCERT All Right Reserved</div>
+	<div class="copyright">Developed by 장지훈, 정원배, 김재훈 Designed by 이호은 Copyright 2018 CNSA CONCERT All Right Reserved</div>
 
 
 	<!-- Navbar - 스크롤하면 색바뀌게!! -->
