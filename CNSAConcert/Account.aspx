@@ -67,6 +67,6 @@
 	</div>
 
 	<!-- Copyright -->
-	<div class="nanum-square about-us-div copyright-page">Developed by 장지훈, 정원배, 김재훈, 김지은, 김산 Designed by 이호은 Copyright 2018 CNSA CONCERT All Right Reserved</div>
+	<div class="nanum-square about-us-div copyright-page">Developed by 장지훈, 정원배, 김재훈, 김지은, 김산 Designed by 이호은, 정지우 Copyright 2018 CNSA CONCERT All Right Reserved</div>
 </body>
 </html>

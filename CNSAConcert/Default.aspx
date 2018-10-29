@@ -118,7 +118,7 @@
 	</div>
 
 	<!-- Copyright -->
-	<div class="copyright">Developed by 장지훈, 정원배, 김재훈, 김지은, 김산 Designed by 이호은 Copyright 2018 CNSA CONCERT All Right Reserved</div>
+	<div class="copyright">Developed by 장지훈, 정원배, 김재훈, 김지은, 김산 Designed by 이호은, 정지우 Copyright 2018 CNSA CONCERT All Right Reserved</div>
 
 
 	<!-- Navbar - 스크롤하면 색바뀌게!! -->

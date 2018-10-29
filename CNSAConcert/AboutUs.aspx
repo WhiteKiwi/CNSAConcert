@@ -60,7 +60,6 @@
 			BV.show('/assets/img/background.jpg');
 			//모바일일 경우 비디오 대신 대체할 이미지입니다.
 		}
-		BV.doLoop = true;
 		BV.show(
 			{ type: "video/mp4", src: "/assets/files/aboutus1.mp4", doLoop: false },
 			{ type: "video/mp4", src: "/assets/files/aboutus2.mp4", doLoop: true }
