@@ -83,5 +83,16 @@
 			//웹브라우저마다 지원하는 비디오 형식이 다르기 때문에 다양하게 만들어서 제공해야합니다. 변환은 다음팟인코더나, 카카오인코더를 이용하세요. 
 			//옵션중에 doLoop는 영상 반복을 의미합니다. true는 영상 반복, false는 반복 안함입니다.
 	</script>
+
+	<!-- 모바일 = 팅김 -->
+	<script>
+		var filter = "win16|win32|win64|mac|macintel";
+		if (navigator.platform) {
+			if (filter.indexOf(navigator.platform.toLowerCase()) < 0) {
+				alert('다산관 PC로 접속해주세요.');
+				history.back();
+			}
+		}
+	</script>
 </body>
 </html>
