@@ -43,9 +43,9 @@
 		<div>
 			<div>
 				<h1 class="kcc-eunyoung">열정의 집합, 그 표출의 순간</h1>
-				<span>충남삼성고등학교 학생들은 1인1기를 통해<br />
-					자신만의 특기로 음악적 소양을 기르며<br />
-					미래의 융합적 인재로 커 나갈 준비를 해나가고 있습니다.</span>
+				<span>충남삼성고등학교 학생들은 CNSA CONCERT를 통해<br />
+					그 동안 갈고 닦은 실력을<br />
+					많은 사람들 앞에서 표출합니다</span>
 				<br />
 				<br />
 				<br />
@@ -84,9 +84,9 @@
 		<img src="/assets/img/cncon6.jpeg" width="1200" />
 		<div>
 			<h1 class="kcc-eunyoung">모두가 하나 되는 순간</h1>
-			<span>충남삼성고등학교 학생들은 1인1기를 통해<br />
-				자신만의 특기로 음악적 소양을 기르며<br />
-				미래의 융합적 인재로 커 나갈 준비를 해나가고 있습니다.</span>
+			<span>충남삼성고등학교 학생들은 CNSA CONCERT를 통해<br />
+				함께 힘을 합쳐 연주하고<br />
+				음악으로 하나됩니다.</span>
 		</div>
 	</div>
 	<div style="content: ''; display: table; clear: both;"></div>
@@ -112,9 +112,9 @@
 	<div style="background-image: url('/assets/img/cncon7.jpeg'); background-size: cover; height: 500px; margin-top: -40px; user-select: none;">
 		<br />
 		<br />
-		<span class="expression">충남삼성고등학교 학생들은 1인1기를 통해</span><br />
-		<span class="expression">자신만의 특기로 음악적 소양을 기르며</span><br />
-		<span class="expression">미래의 융합적 인재로 커 나갈 준비를 해나가고 있습니다.</span><br />
+		<span class="expression">충남삼성고등학교 학생들은 CNSA CONCERT를 통해</span><br />
+		<span class="expression">그 동안 갈고 닦은 실력을 뽐내고</span><br />
+		<span class="expression">음악적 교양을 길러 나아가고 있습니다.</span><br />
 	</div>
 
 	<!-- Copyright -->
