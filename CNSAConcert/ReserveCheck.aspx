@@ -80,9 +80,9 @@
 						</div>
 						<div style="content: ''; display: table; clear: both;"></div>
 
-						<div>
+						<div style="overflow: auto; height: 456px;">
 							<%
-								for (int i = 3; i <= 21; i++) {
+								for (int i = 3; i <= 23; i++) {
 									if (seat.Row == i.ToString())
 										Response.Write("<div><div class=\"num-check color-pink\">" + (char)(64 + i) + "</div>");
 									else
@@ -103,7 +103,7 @@
 					</div>
 
 					<!-- 오른쪽 -->
-					<div style="float: left; margin-left: 44px;">
+					<div style="float: left; margin-left: 32px;">
 						<div>
 							<%
 								for (int a = 1; a <= 18; a++) {
@@ -115,7 +115,7 @@
 
 						<div>
 							<%
-								for (int i = 3; i <= 19; i++) {
+								for (int i = 3; i <= 21; i++) {
 									Response.Write("<div>");
 
 									for (int j = 1; j <= 18; j++) {

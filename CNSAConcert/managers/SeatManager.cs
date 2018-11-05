@@ -148,7 +148,7 @@ namespace CNSAConcert.Managers {
 		/// <see cref="Seat.Row"/>
 		/// <see cref="Seat.Col"/>
 		public static bool[,] GetSoldOutSeats(string grade) {
-			var result = new bool[21, 19];
+			var result = new bool[23, 19];
 
 			// Connect to DB
 			using (var conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ConcertDB"].ConnectionString)) {

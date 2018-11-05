@@ -7,7 +7,7 @@
 	<title>CNSA CONCERT</title>
 	<link rel="shortcut icon" href="/assets/img/favicon.png" />
 
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/assets/css/style.css?ver=1.0">
 
 	<link rel="stylesheet" href="/assets/css/font.css">
 </head>
@@ -92,6 +92,34 @@
 						}
 
 						Response.Write("</div>\n");
+					}
+
+					if ((string)Session["Grade"] == "1") {
+						for (int i = 22; i <= 23; i++) {
+							Response.Write("<div><div class=\"num\">" + (char)(64 + i) + "</div>");
+
+							for (int j = 1; j <= 18; j++) {
+								if (!soldOutSeats[i - 1, j - 1])
+									Response.Write("<button class=\"seat-button\" onclick=\"selectSeat(" + i + ", " + j + ")\"></button>");
+								else
+									Response.Write("<button class=\"seat-button soldout\" disabled></button>");
+							}
+
+							Response.Write("</div>\n");
+						}
+					} else {
+						for (int i = 20; i <= 21; i++) {
+							Response.Write("<div><div class=\"num\">" + (char)(64 + i) + "</div>");
+
+							for (int j = 1; j <= 18; j++) {
+								if (!soldOutSeats[i - 1, j - 1])
+									Response.Write("<button class=\"seat-button\" onclick=\"selectSeat(" + i + ", " + j + ")\"></button>");
+								else
+									Response.Write("<button class=\"seat-button soldout\" disabled></button>");
+							}
+
+							Response.Write("</div>\n");
+						}
 					}
 				%>
 				<div style="content: ''; display: table; clear: both;"></div>

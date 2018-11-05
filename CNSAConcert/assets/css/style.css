@@ -406,6 +406,8 @@ html, body {
 	height: 690px;
 	padding: 19px;
 	padding-right: 22px;
+	overflow: auto;
+	overflow-x: hidden;
 }
 
 .num {
